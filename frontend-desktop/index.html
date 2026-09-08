@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>智影-视频智能分析与检索</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <script>
+    // 主题防闪烁：React 挂载前先按 localStorage 落 dark 类（亮/暗一致，避免暗色启动闪一下亮）
+    try { if (localStorage.getItem("zhiying-theme") === "dark") document.documentElement.classList.add("dark"); } catch (e) {}
+  </script>
+  <style>
+    /* 启动背景防白屏：与桌面壳 SPLASH_HTML 毛玻璃渐变同款，React 挂载后由 .app-shell 覆盖。
+       不再单独渲染 #boot 卡片 —— 进度展示已由桌面壳启动页完成，load_url 后直接进应用，
+       避免「换一张卡片」的跳变。 */
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: linear-gradient(160deg, #e2edff 0%, #d5e4ff 30%, #c2d8ff 62%, #adc8ff 100%);
+    }
+    html.dark body {
+      background: linear-gradient(160deg, #1b212c 0%, #151921 45%, #10131a 100%);
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
